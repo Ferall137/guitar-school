@@ -1,5 +1,7 @@
-﻿```css
-/* ================= ГЛОБАЛЬНЫЕ ================= */
+﻿/* =========================================================
+   ГЛОБАЛЬНЫЕ
+   ========================================================= */
+
 html {
     scroll-behavior: smooth;
 }
@@ -13,10 +15,20 @@ body {
 
 section {
     scroll-margin-top: 80px;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: -15px;
+    margin-bottom: 20px;
+    font-size: 36px;
 }
 
 
-/* ================= НАВИГАЦИЯ ================= */
+/* =========================================================
+   НАВИГАЦИЯ
+   ========================================================= */
 
 .navbar {
     position: fixed;
@@ -30,6 +42,7 @@ section {
     padding: 12px 0;
 }
 
+
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -39,25 +52,25 @@ section {
     align-items: center;
 }
 
+
+/* Только текст — icon.png убран */
+
 .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
     font-weight: 700;
     font-size: 18px;
+    letter-spacing: 0.3px;
 }
 
-    .nav-logo img {
-        height: 30px;
-    }
 
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 18px;
     margin: 0;
     padding: 0;
 }
+
 
     .nav-menu a {
         text-decoration: none;
@@ -66,58 +79,67 @@ section {
         font-size: 15px;
         transition: 0.3s;
         position: relative;
+        padding: 5px 0;
+        white-space: nowrap;
     }
+
 
         .nav-menu a:hover {
             color: #000;
         }
+
 
         .nav-menu a::after {
             content: '';
             position: absolute;
             bottom: -4px;
             left: 0;
-            width: 0%;
+            width: 0;
             height: 2px;
             background: #000;
             transition: 0.3s;
         }
 
+
         .nav-menu a:hover::after {
             width: 100%;
         }
 
-        /* Кнопка контактов */
 
-        .nav-menu a:last-child {
-            color: #fff;
-            background: #000;
-            padding: 8px 20px;
-            border-radius: 30px;
-            transition: 0.3s;
+    /* Кнопка контактов */
+
+    .nav-menu .nav-cta {
+        color: #fff;
+        background: #000;
+        padding: 8px 20px;
+        border-radius: 30px;
+    }
+
+
+        .nav-menu .nav-cta::after {
+            display: none;
         }
 
-            .nav-menu a:last-child::after {
-                display: none;
-            }
 
-            .nav-menu a:last-child:hover {
-                background: #333;
-                transform: scale(1.05);
-            }
+        .nav-menu .nav-cta:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
 
 
-/* ================= HERO ================= */
+/* =========================================================
+   ГЛАВНЫЙ БАННЕР
+   ========================================================= */
 
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 100px 40px 30px 40px;
+    padding: 100px 40px 30px;
 }
 
+
 .hero-container {
-    transform: translateY(-20px);
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -125,75 +147,96 @@ section {
     align-items: center;
     justify-content: space-between;
     gap: 60px;
+    transform: translateY(-20px);
 }
+
 
 .hero-left {
-    transform: translateY(-20px);
     flex: 1;
+    transform: translateY(-20px);
+    text-align: left;
 }
 
-    .hero-left h1 {
-        font-size: 64px;
-        line-height: 1.05;
-        margin: 20px 0;
-        font-weight: 900;
+
+/* Маленькая надпись над названием */
+
+.hero-brand {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+
+/* Главное название */
+
+.hero-left h1 {
+    font-size: 82px;
+    line-height: 0.95;
+    margin: 0 0 28px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+
+    .hero-left h1 span {
+        color: #000;
     }
 
-        .hero-left h1 span {
-            color: black;
-        }
+
+/* Описание */
 
 .subtitle {
-    font-size: 18px;
+    font-size: 21px;
+    line-height: 1.55;
     color: #333;
-    max-width: 500px;
-    margin-bottom: 30px;
+    max-width: 600px;
+    margin: 0 0 35px;
 }
 
 
-/* ================= ACTIONS ================= */
+/* =========================================================
+   КНОПКИ / ТЕЛЕФОН В БАННЕРЕ
+   ========================================================= */
 
 .hero-actions {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
 }
 
+
 .free {
-    font-size: 22px;
+    font-size: 25px;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
+
     .free b {
-        background: black;
-        color: white;
-        padding: 8px 14px;
+        background: #000;
+        color: #fff;
+        padding: 9px 15px;
     }
 
+
 .phone a {
-    font-size: 35px;
-    font-weight: bold;
-    color: black;
+    font-size: 40px;
+    font-weight: 800;
+    color: #000;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 
-/* ================= LOGO ================= */
-
-.logo img {
-    height: 40px;
-}
-
-.logo-text {
-    font-size: 20px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 10px;
-    font-weight: 700;
-}
+    .phone a:hover {
+        opacity: 0.65;
+    }
 
 
-/* ================= HERO IMAGE ================= */
+/* =========================================================
+   КАРТИНКА БАННЕРА
+   ========================================================= */
 
 .hero-right {
     flex: 1;
@@ -201,40 +244,31 @@ section {
     justify-content: center;
 }
 
+
     .hero-right img {
         width: 100%;
-        max-width: 450px;
+        max-width: 500px;
         border-radius: 20px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
         object-fit: cover;
     }
 
 
-/* ================= ОБЩИЕ СЕКЦИИ ================= */
-
-section {
-    padding: 80px 40px;
-    text-align: center;
-}
-
-h2 {
-    margin-top: -15px;
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-
-/* ================= ABOUT ================= */
+/* =========================================================
+   ОБУЧЕНИЕ С РЕЗУЛЬТАТОМ
+   ========================================================= */
 
 .about {
-    padding-top: 25px;
+    padding-top: 35px;
     padding-bottom: 80px;
 }
 
+
     .about h2 {
-        margin-top: -35px;
+        margin-top: -15px;
         margin-bottom: 45px;
     }
+
 
 .about-content {
     max-width: 900px;
@@ -243,6 +277,7 @@ h2 {
     grid-template-columns: repeat(2, 1fr);
     gap: 22px;
 }
+
 
 .about-item {
     background: rgba(255, 255, 255, 0.65);
@@ -254,16 +289,19 @@ h2 {
     transition: 0.3s ease;
 }
 
+
     .about-item:hover {
         transform: translateY(-5px);
         background: #fff;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
     }
 
+
 .about-icon {
     font-size: 28px;
     margin-bottom: 10px;
 }
+
 
 .about-item p {
     margin: 0;
@@ -271,6 +309,7 @@ h2 {
     line-height: 1.7;
     color: #333;
 }
+
 
 .about-final {
     max-width: 850px;
@@ -287,7 +326,9 @@ h2 {
 }
 
 
-/* ================= AUDIENCE ================= */
+/* =========================================================
+   ДЛЯ КОГО
+   ========================================================= */
 
 .grid {
     display: flex;
@@ -296,190 +337,45 @@ h2 {
     gap: 20px;
 }
 
+
 .box {
     border: 1px solid #ccc;
     padding: 40px;
     width: 200px;
-    font-weight: bold;
-    transition: 0.3s;
+    font-weight: 700;
+    transition: all 0.3s ease;
 }
+
 
     .box:hover {
         background: #000;
         color: #fff;
-        transform: translateY(-5px);
+        border-color: #000;
+        transform: translateY(-6px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
 
 
-/* ================= BENEFITS ================= */
-
-.benefits {
-    position: relative;
-    background: url("imageguitar.png") center/cover no-repeat;
-    color: white;
-    padding: 120px 40px;
-}
-
-    .benefits::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-    }
-
-    .benefits h2,
-    .benefits .list {
-        position: relative;
-        z-index: 1;
-    }
-
-.list div {
-    margin: 10px 0;
-    font-size: 18px;
-}
-
-
-/* ================================================= */
-/* ================= КОНТАКТЫ ====================== */
-/* ================================================= */
-
-.cta {
-    background: #000;
-    color: #fff;
-    padding: 80px 40px;
-    text-align: center;
-    border: none !important;
-    outline: none !important;
-}
-
-    .cta h2 {
-        margin-top: 0;
-        margin-bottom: 35px;
-        color: #fff;
-    }
-
-
-/* Контейнер */
-
-.contacts-list {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    border: none !important;
-}
-
-
-/* Номер телефона */
-
-.contact-item {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    border: none !important;
-    outline: none !important;
-}
-
-    .contact-item a {
-        color: #fff;
-        text-decoration: none;
-        border: none !important;
-        outline: none !important;
-        transition: 0.3s;
-    }
-
-        .contact-item a:hover {
-            color: #ccc;
-        }
-
-
-/* Кнопки */
-
-.contact-button {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 16px 25px;
-    border: none !important;
-    outline: none !important;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 700;
-    transition: 0.3s;
-    cursor: pointer;
-    box-shadow: none !important;
-}
-
-
-    /* Иконки */
-
-    .contact-button i {
-        font-size: 24px;
-        line-height: 1;
-    }
-
-
-/* WhatsApp */
-
-.whatsapp {
-    background: #fff;
-    color: #000;
-}
-
-    .whatsapp:hover {
-        background: #ddd;
-        color: #000;
-        transform: translateY(-3px);
-    }
-
-
-/* Telegram */
-
-.telegram {
-    background: #fff;
-    color: #000;
-}
-
-    .telegram:hover {
-        background: #ddd;
-        color: #000;
-        transform: translateY(-3px);
-    }
-
-
-/* Убираем любые рамки при фокусе */
-
-.contact-button:focus,
-.contact-button:active,
-.contact-item a:focus,
-.contact-item a:active {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-
-/* ================= LOCATION ================= */
+/* =========================================================
+   АДРЕС
+   ========================================================= */
 
 .location {
     background: #f5f2ec;
     padding: 80px 40px;
 }
 
+
     .location h2 {
         margin-bottom: 30px;
     }
+
 
 .location-info {
     max-width: 700px;
     margin: 0 auto;
 }
+
 
 .address {
     font-size: 22px;
@@ -493,9 +389,11 @@ h2 {
     display: inline-block;
 }
 
+
 .address-icon {
     margin-right: 10px;
 }
+
 
 .location-features {
     display: grid;
@@ -504,6 +402,7 @@ h2 {
     max-width: 600px;
     margin: 0 auto;
 }
+
 
 .location-item {
     background: #fff;
@@ -520,17 +419,21 @@ h2 {
     border: 1px solid #e9e6df;
 }
 
+
     .location-item:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     }
+
 
 .location-icon {
     font-size: 28px;
 }
 
 
-/* ================= ГАЛЕРЕЯ ================= */
+/* =========================================================
+   ГАЛЕРЕЯ
+   ========================================================= */
 
 .gallery-grid {
     display: grid;
@@ -540,6 +443,7 @@ h2 {
     margin: 0 auto;
 }
 
+
 .gallery-item {
     overflow: hidden;
     border-radius: 12px;
@@ -548,10 +452,12 @@ h2 {
     aspect-ratio: 4 / 3;
 }
 
+
     .gallery-item:hover {
         transform: scale(1.03);
         box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
     }
+
 
     .gallery-item img {
         width: 100%;
@@ -561,7 +467,148 @@ h2 {
     }
 
 
-/* ================= АНИМАЦИЯ ================= */
+/* =========================================================
+   ПРЕИМУЩЕСТВА
+   ========================================================= */
+
+.benefits {
+    position: relative;
+    background: url("imageguitar.png") center / cover no-repeat;
+    color: white;
+    padding: 120px 40px;
+}
+
+
+    .benefits::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+    }
+
+
+    .benefits h2,
+    .benefits .list {
+        position: relative;
+        z-index: 1;
+    }
+
+
+.list div {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   КОНТАКТЫ
+   ========================================================= */
+
+.cta {
+    background: #000;
+    color: #fff;
+    padding: 80px 40px;
+    text-align: center;
+    border: none !important;
+}
+
+
+    .cta h2 {
+        margin-top: 0;
+        margin-bottom: 35px;
+        color: #fff;
+    }
+
+
+.contacts-list {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.contact-item {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+    .contact-item a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+
+        .contact-item a:hover {
+            color: #ccc;
+        }
+
+
+/* Кнопки */
+
+.contact-button {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 25px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+    .contact-button i {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+
+/* WhatsApp */
+
+.whatsapp {
+    background: #fff;
+    color: #000;
+}
+
+
+    .whatsapp:hover {
+        background: #ddd;
+        color: #000;
+        transform: translateY(-3px);
+    }
+
+
+/* Telegram */
+
+.telegram {
+    background: #fff;
+    color: #000;
+}
+
+
+    .telegram:hover {
+        background: #ddd;
+        color: #000;
+        transform: translateY(-3px);
+    }
+
+
+/* =========================================================
+   АНИМАЦИЯ
+   ========================================================= */
 
 .section-hidden {
     opacity: 0;
@@ -569,13 +616,16 @@ h2 {
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+
 .section-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
 
-/* ================= БУРГЕР ================= */
+/* =========================================================
+   БУРГЕР
+   ========================================================= */
 
 .burger {
     display: none;
@@ -588,6 +638,7 @@ h2 {
     z-index: 1001;
 }
 
+
     .burger span {
         display: block;
         width: 28px;
@@ -597,6 +648,7 @@ h2 {
         transition: 0.3s;
     }
 
+
 .overlay {
     display: none;
     position: fixed;
@@ -605,67 +657,114 @@ h2 {
     z-index: 998;
 }
 
+
     .overlay.active {
         display: block;
     }
 
 
-/* ================= АДАПТИВНОСТЬ ================= */
+/* =========================================================
+   ПЛАНШЕТ
+   ========================================================= */
 
 @media (max-width: 900px) {
-
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-left h1 {
-        font-size: 42px;
-    }
-
-    .hero-right img {
-        max-width: 320px;
-        transform: scale(1.02);
-    }
-
-    .grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-menu {
-        gap: 15px;
-    }
-
-        .nav-menu a {
-            font-size: 13px;
-        }
-
-            .nav-menu a:last-child {
-                padding: 6px 14px;
-            }
 
     .nav-container {
         padding: 0 20px;
     }
 
-    .hero {
-        padding: 100px 20px 30px 20px;
+
+    .nav-menu {
+        gap: 12px;
     }
 
-    section {
-        padding: 50px 20px;
+
+        .nav-menu a {
+            font-size: 13px;
+        }
+
+
+        .nav-menu .nav-cta {
+            padding: 6px 14px;
+        }
+
+
+    .hero {
+        padding: 100px 20px 40px;
+    }
+
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 45px;
+    }
+
+
+    .hero-left {
+        text-align: center;
+        transform: none;
+    }
+
+
+    .hero-brand {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+
+    .hero-left h1 {
+        font-size: 62px;
+    }
+
+
+    .subtitle {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 19px;
+    }
+
+
+    .phone a {
+        font-size: 34px;
+    }
+
+
+    .hero-right img {
+        max-width: 420px;
+    }
+
+
+    .grid {
+        flex-direction: column;
     }
 }
 
 
-/* ================= МОБИЛЬНАЯ ВЕРСИЯ ================= */
+/* =========================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================================= */
 
 @media (max-width: 768px) {
+
+    section {
+        padding: 55px 20px;
+    }
+
+
+    h2 {
+        font-size: 30px;
+    }
+
+
+    /* Бургер */
 
     .burger {
         display: flex;
     }
+
+
+    /* Меню */
 
     .nav-menu {
         position: fixed;
@@ -673,117 +772,249 @@ h2 {
         right: -100%;
         width: 280px;
         height: 100vh;
+        box-sizing: border-box;
         background: #fff;
         flex-direction: column;
+        align-items: stretch;
         padding: 80px 30px 30px;
-        gap: 15px;
+        gap: 8px;
         box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
-        transition: 0.4s ease;
+        transition: right 0.35s ease;
         z-index: 999;
         overflow-y: auto;
-        align-items: stretch;
     }
+
 
         .nav-menu.active {
             right: 0;
         }
 
+
         .nav-menu a {
-            font-size: 18px;
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
             display: block;
+            font-size: 18px;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
             white-space: normal;
         }
+
 
             .nav-menu a::after {
                 display: none;
             }
 
-            .nav-menu a:last-child {
-                color: #fff;
-                background: #000;
-                padding: 12px 20px;
-                border-radius: 30px;
-                border-bottom: none;
-                text-align: center;
-                margin-top: 10px;
-            }
 
-                .nav-menu a:last-child:hover {
-                    background: #333;
-                    transform: scale(1.02);
-                }
+        .nav-menu .nav-cta {
+            color: #fff;
+            background: #000;
+            padding: 13px 20px;
+            border-radius: 30px;
+            text-align: center;
+            border: none;
+            margin-top: 10px;
+        }
+
+
+    /* Анимация бургера */
 
     .burger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
     }
 
+
     .burger.active span:nth-child(2) {
         opacity: 0;
     }
+
 
     .burger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -6px);
     }
 
 
-    /* ABOUT */
+    /* Главный экран */
+
+    .hero {
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 65px;
+    }
+
+
+    .hero-container {
+        gap: 35px;
+    }
+
+
+    .hero-brand {
+        font-size: 17px;
+        letter-spacing: 1.8px;
+        margin-bottom: 14px;
+    }
+
+
+    .hero-left h1 {
+        font-size: 50px;
+        letter-spacing: -1px;
+        margin-bottom: 22px;
+    }
+
+
+    .subtitle {
+        font-size: 17px;
+        line-height: 1.55;
+        margin-bottom: 28px;
+    }
+
+
+    .hero-actions {
+        gap: 18px;
+    }
+
+
+    .free {
+        font-size: 19px;
+    }
+
+
+        .free b {
+            padding: 7px 11px;
+        }
+
+
+    .phone a {
+        font-size: 28px;
+    }
+
+
+    .hero-right img {
+        max-width: 340px;
+        border-radius: 16px;
+    }
+
+
+    /* Обучение */
 
     .about {
-        padding-top: 20px;
+        padding-top: 45px;
         padding-bottom: 60px;
     }
 
+
         .about h2 {
-            margin-top: -20px;
+            font-size: 28px;
             margin-bottom: 30px;
-            font-size: 30px;
         }
+
 
     .about-content {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
+
     .about-item {
         padding: 22px;
     }
+
 
         .about-item p {
             font-size: 16px;
             line-height: 1.65;
         }
 
+
     .about-final {
         margin-top: 25px;
         padding: 18px 20px;
-        font-size: 18px;
+        font-size: 17px;
     }
 
 
-    /* ГАЛЕРЕЯ */
+    /* Для кого */
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .box {
+        width: 100%;
+        max-width: 320px;
+        box-sizing: border-box;
+        padding: 30px;
+    }
+
+
+    /* Адрес */
+
+    .location {
+        padding: 55px 20px;
+    }
+
+
+        .location h2 {
+            margin-bottom: 25px;
+        }
+
+
+    .address {
+        font-size: 17px;
+        line-height: 1.5;
+        padding: 15px;
+        margin-bottom: 25px;
+    }
+
+
+    .location-features {
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
 
-    /* КОНТАКТЫ */
+    .location-item {
+        font-size: 16px;
+        padding: 22px 18px;
+    }
+
+
+    /* Галерея */
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+
+    /* Преимущества */
+
+    .benefits {
+        padding: 80px 20px;
+    }
+
+
+    .list div {
+        font-size: 17px;
+    }
+
+
+    /* Контакты */
 
     .cta {
         padding: 60px 20px;
     }
 
+
+        .cta h2 {
+            font-size: 28px;
+        }
+
+
     .contact-item {
         font-size: 23px;
     }
+
 
     .contact-button {
         font-size: 15px;
         padding: 15px 20px;
     }
+
 
         .contact-button i {
             font-size: 22px;
@@ -791,46 +1022,94 @@ h2 {
 }
 
 
-/* ================= 600PX ================= */
-
-@media (max-width: 600px) {
-
-    .location-features {
-        grid-template-columns: 1fr;
-    }
-
-    .address {
-        font-size: 18px;
-        padding: 15px;
-    }
-
-    .location {
-        padding: 50px 20px;
-    }
-}
-
-
-/* ================= 480PX ================= */
+/* =========================================================
+   МАЛЕНЬКИЕ ТЕЛЕФОНЫ
+   ========================================================= */
 
 @media (max-width: 480px) {
 
     .nav-menu {
         width: 100%;
-        right: -100%;
     }
+
+
+    .hero {
+        padding-top: 110px;
+    }
+
+
+    .hero-brand {
+        font-size: 15px;
+    }
+
+
+    .hero-left h1 {
+        font-size: 43px;
+        line-height: 0.98;
+    }
+
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+
+    .free {
+        font-size: 17px;
+    }
+
+
+    .phone a {
+        font-size: 25px;
+    }
+
+
+    .hero-right img {
+        max-width: 100%;
+    }
+
+
+    h2 {
+        font-size: 26px;
+    }
+
 
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-    .about h2 {
-        font-size: 26px;
-    }
 
     .about-final {
-        font-size: 17px;
+        font-size: 16px;
+    }
+
+
+    .contact-item {
+        font-size: 21px;
     }
 }
 
-```
+
+/* =========================================================
+   ЕСЛИ ПОЛЬЗОВАТЕЛЬ ОТКЛЮЧИЛ АНИМАЦИИ
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    .section-hidden {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+
+    .section-visible {
+        transform: none;
+    }
+}
